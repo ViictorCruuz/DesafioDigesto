@@ -1,3 +1,5 @@
+import csv
+
 from urllib.request import Request, urlopen
 from bs4 import BeautifulSoup
 
@@ -33,3 +35,11 @@ with open('crawler.txt', 'w') as file:
 
     for dt in ocean:
         file.write(dt.text + '\n')
+
+print("Você pode escolher as seguintes opções: \n1) Imprime resultado na tela \n2) Salvar dados em arquivo csv\n3) Salvar em arquivo json\n")
+
+choose = int(input())
+
+if choose == 1:
+    with open('crawler.txt', 'r') as r:
+        print(r.read())
